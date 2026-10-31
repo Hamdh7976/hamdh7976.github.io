@@ -1,0 +1,33 @@
+---
+import Base from '../../layouts/Base.astro';
+import PostCard from '../../components/PostCard.astro';
+import { getPosts, slugify, type Post } from '../../utils';
+
+export async function getStaticPaths() {
+	const posts = await getPosts();
+	const tags = [...new Set(posts.flatMap((p) => p.data.tags))];
+	return tags.map((tag) => ({
+		params: { tag: slugify(tag) },
+		props: { tag, posts: posts.filter((p) => p.data.tags.includes(tag)) },
+	}));
+}
+
+interface Props {
+	tag: string;
+	posts: Post[];
+}
+
+const { tag, posts } = Astro.props;
+---
+
+<Base title={`#${tag}`} description={`Posts tagged ${tag}.`}>
+	<a href="/blog/">← All posts</a>
+	<h1>#{tag}</h1>
+	<p class="lead">{posts.length} {posts.length === 1 ? 'post' : 'posts'}</p>
+	<ul class="post-list list">{posts.map((post) => <PostCard post={post} />)}</ul>
+</Base>
+
+<style>
+	h1 { margin-top: 1rem; }
+	.list { margin-top: 2rem; }
+</style>

@@ -1,0 +1,33 @@
+---
+import Base from '../../layouts/Base.astro';
+import PostCard from '../../components/PostCard.astro';
+import { getPosts, slugify } from '../../utils';
+
+const posts = await getPosts();
+const tags = [...new Set(posts.flatMap((p) => p.data.tags))].sort();
+
+// Group posts by year for a scannable archive.
+const byYear = Map.groupBy(posts, (p) => p.data.pubDate.getFullYear());
+---
+
+<Base title="Blog" description="All blog posts.">
+	<h1>Blog</h1>
+	<p class="lead">Thoughts, notes and write-ups. {posts.length} {posts.length === 1 ? 'post' : 'posts'} so far.</p>
+
+	{tags.length > 0 && (
+		<ul class="tags tag-filter" aria-label="Browse by tag">
+			{tags.map((t) => <li><a class="tag" href={`/tags/${slugify(t)}/`}>#{t}</a></li>)}
+		</ul>
+	)}
+
+	{[...byYear].map(([year, list]) => (
+		<section>
+			<h2>{year}</h2>
+			<ul class="post-list">{list.map((post) => <PostCard post={post} />)}</ul>
+		</section>
+	))}
+</Base>
+
+<style>
+	.tag-filter { margin-top: 1.5rem; }
+</style>

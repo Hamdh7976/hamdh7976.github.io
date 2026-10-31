@@ -1,0 +1,23 @@
+---
+import { formatDate, readingTime, type Post } from '../utils';
+
+interface Props {
+	post: Post;
+}
+
+const { post } = Astro.props;
+const { title, description, pubDate, draft } = post.data;
+---
+
+<li>
+	<a class="post-card" href={`/blog/${post.id}/`}>
+		<div class="post-meta">
+			<time datetime={pubDate.toISOString()}>{formatDate(pubDate)}</time>
+			<span aria-hidden="true">·</span>
+			<span>{readingTime(post.body)}</span>
+			{draft && <span class="tag">Draft</span>}
+		</div>
+		<h3>{title}</h3>
+		<p>{description}</p>
+	</a>
+</li>
