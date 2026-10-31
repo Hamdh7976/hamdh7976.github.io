@@ -26,11 +26,12 @@ export const PROFILE = {
 		'Creativity is another important part of my life. Through AI-assisted visuals, animation, and storytelling, I explore new ways to share Maldivian culture, folklore, and everyday island experiences.',
 		'At the heart of everything I do is a simple ambition: to keep growing, create meaningful work, and make a positive difference for the people around me.',
 	],
-	email: '', // add a public contact email to show a "Get in touch" button
+	email: 'italiano7976@gmail.com',
 	resumeUrl: '', // e.g. '/resume.pdf' (place the file in public/)
 };
 
 export const SOCIALS: { label: string; href: string }[] = [
+	{ label: 'LinkedIn', href: 'https://www.linkedin.com/in/hamdhulla-adam-saeed-8339bb147/' },
 	{ label: 'GitHub', href: 'https://github.com/Hamdh7976' },
 ];
 
