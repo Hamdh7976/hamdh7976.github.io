@@ -27,8 +27,8 @@ const initials = SITE.name
 	<p class="lead">{PROFILE.intro}</p>
 
 	<div class="actions">
-		<a class="button primary" href={`mailto:${PROFILE.email}`}>Get in touch</a>
-		<a class="button ghost" href="/blog/">Read the blog</a>
+		{PROFILE.email && <a class="button primary" href={`mailto:${PROFILE.email}`}>Get in touch</a>}
+		<a class={PROFILE.email ? 'button ghost' : 'button primary'} href="/blog/">Read the blog</a>
 		{PROFILE.resumeUrl && <a class="button ghost" href={PROFILE.resumeUrl}>Résumé</a>}
 	</div>
 

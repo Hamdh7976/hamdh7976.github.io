@@ -5,74 +5,52 @@
 // ─────────────────────────────────────────────────────────────
 
 export const SITE = {
-	name: 'Hamdhulla',
-	title: 'Hamdhulla — Personal Site & Blog',
-	description: 'Personal website and blog: notes on work, projects and ideas.',
+	name: 'Hamdhulla Adam',
+	title: 'Hamdhulla Adam — Personal Site & Blog',
+	description:
+		'Hamdhulla Adam: hospitality professional, technology enthusiast and creative storyteller from the Maldives.',
 	locale: 'en',
 };
 
 export const PROFILE = {
-	headline: 'Hi, I’m Hamdhulla.',
-	role: 'Developer · Writer · Lifelong learner',
-	location: 'Somewhere on Earth',
+	headline: 'Hello, I’m Hamdhulla.',
+	role: 'Hospitality Professional · Technology Enthusiast · Creative Storyteller',
+	location: 'Maldives',
 	// Put a photo at public/avatar.jpg and set this to '/avatar.jpg'. Leave empty to show initials.
 	avatar: '',
 	intro:
-		'I build things for the web and write about what I learn along the way. This is my corner of the internet: a bit about me, and a blog where I share ideas, projects and lessons.',
+		'A proud Maldivian with a passion for connecting people, exploring technology, and bringing stories to life.',
 	about: [
-		'Write a few sentences about yourself here: what you do, what you care about, and what you are working on right now.',
-		'Add a second paragraph about your background, interests outside of work, or what people can reach out to you about.',
+		'As an Airport Service Coordinator at Angsana Velavaru, I help guests begin and end their island journeys with care. My work brings together coordination, problem-solving, and the personal attention that makes people feel welcome.',
+		'My background in software design and development inspires me to explore practical digital solutions, from useful applications to tools that simplify everyday work. I enjoy learning, experimenting, and turning ideas into something people can use.',
+		'Creativity is another important part of my life. Through AI-assisted visuals, animation, and storytelling, I explore new ways to share Maldivian culture, folklore, and everyday island experiences.',
+		'At the heart of everything I do is a simple ambition: to keep growing, create meaningful work, and make a positive difference for the people around me.',
 	],
-	email: 'you@example.com',
+	email: '', // add a public contact email to show a "Get in touch" button
 	resumeUrl: '', // e.g. '/resume.pdf' (place the file in public/)
 };
 
 export const SOCIALS: { label: string; href: string }[] = [
 	{ label: 'GitHub', href: 'https://github.com/Hamdh7976' },
-	{ label: 'LinkedIn', href: 'https://www.linkedin.com/in/your-username' },
-	{ label: 'X / Twitter', href: 'https://x.com/your-username' },
 ];
 
 export const SKILLS = [
-	'JavaScript',
-	'TypeScript',
-	'HTML & CSS',
-	'Node.js',
-	'Python',
-	'SQL',
-	'Git',
-	'Technical writing',
+	'Guest services',
+	'Coordination',
+	'Problem-solving',
+	'Software design & development',
+	'AI-assisted visuals',
+	'Animation',
+	'Storytelling',
 ];
 
 export const EXPERIENCE: { period: string; title: string; org: string; summary: string }[] = [
 	{
-		period: '2024 — Present',
-		title: 'Your current role',
-		org: 'Company / Organization',
-		summary: 'One or two lines on what you do and the impact you have had.',
-	},
-	{
-		period: '2021 — 2024',
-		title: 'Previous role',
-		org: 'Company / Organization',
-		summary: 'Highlights, projects you are proud of, or skills you developed.',
-	},
-	{
-		period: '2017 — 2021',
-		title: 'Degree / Program',
-		org: 'University / School',
-		summary: 'Area of study, notable coursework or achievements.',
+		period: 'Present',
+		title: 'Airport Service Coordinator',
+		org: 'Angsana Velavaru',
+		summary: 'Helping guests begin and end their island journeys with care: coordination, problem-solving and personal attention.',
 	},
 ];
 
-export const PROJECTS: { name: string; description: string; href?: string }[] = [
-	{
-		name: 'Project One',
-		description: 'A short description of something you built and why it matters.',
-		href: 'https://github.com/your-username/project-one',
-	},
-	{
-		name: 'Project Two',
-		description: 'Another project: the problem, your approach, and the result.',
-	},
-];
+export const PROJECTS: { name: string; description: string; href?: string }[] = [];
